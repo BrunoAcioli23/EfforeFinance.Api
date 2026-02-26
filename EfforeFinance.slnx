@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="EfforeFinance.Api/EfforeFinance.Api.csproj" />
+  <Project Path="EfforeFinance.App/EfforeFinance.App.csproj" Id="b4fd1ff2-9639-479b-8ba0-f0cbee1762b9" />
 </Solution>

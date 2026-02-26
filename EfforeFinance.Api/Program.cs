@@ -12,6 +12,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<EfforeFinance.Api.Repositories.TransacaoRepository>(provider =>
     new EfforeFinance.Api.Repositories.TransacaoRepository(connectionString));
 
+builder.Services.AddScoped<EfforeFinance.Api.Repositories.DashboardRepository>(provider =>
+    new EfforeFinance.Api.Repositories.DashboardRepository(connectionString));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

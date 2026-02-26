@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EfforeFinance.App.Views.DashboardPage"
+             Title="EfforeFinance"
+             BackgroundColor="#F4F6F8">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Olá, Bruno!" FontSize="28" FontAttributes="Bold" TextColor="#333333" />
+                <Label Text="Aqui está o resumo das suas finanças." FontSize="14" TextColor="#666666" />
+            </VerticalStackLayout>
+
+            <Frame BackgroundColor="#0056D2" CornerRadius="15" Padding="20" HasShadow="True" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Saldo Atual" FontSize="16" TextColor="#E0E0E0" />
+                    <Label Text="{Binding SaldoAtual, StringFormat='R$ {0:N2}'}" FontSize="36" FontAttributes="Bold" TextColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Resumo de Despesas (Fev/2026)" FontSize="18" FontAttributes="Bold" TextColor="#333333" />
+
+                <CollectionView ItemsSource="{Binding Despesas}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="0,0,0,10" Padding="15" CornerRadius="10" HasShadow="False" BorderColor="#D1D5DB">
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <VerticalStackLayout Grid.Column="0" Spacing="5">
+                                        <Label Text="{Binding Categoria}" FontSize="16" FontAttributes="Bold" TextColor="#333333" />
+                                        <Label Text="{Binding PorcentagemDaReceita, StringFormat='Compromete {0:N2}% da renda'}" FontSize="12" TextColor="#888888" />
+                                    </VerticalStackLayout>
+
+                                    <Label Grid.Column="1" Text="{Binding ValorGasto, StringFormat='R$ {0:N2}'}" FontSize="16" FontAttributes="Bold" TextColor="#E53935" VerticalOptions="Center" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

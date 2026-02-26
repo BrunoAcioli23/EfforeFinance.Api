@@ -2,6 +2,8 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 using EfforeFinance.Api.Models;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
 
 namespace EfforeFinance.Api.Repositories
 {
@@ -38,5 +40,7 @@ namespace EfforeFinance.Api.Repositories
                 }
             }
         }
+
+
     }
 }
